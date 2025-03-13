@@ -14,8 +14,6 @@ This project demonstrates:
 - How to configure Dependabot for various package managers.
 - How to handle pull requests created by Dependabot.
 
-For a full list of Dependabot configuration options, check the [official documentation](https://docs.github.com/en/code-security/dependabot/working-with-dependabot/dependabot-options-reference).
-
 ---
 
 ## Getting Started
@@ -56,8 +54,8 @@ Dependabot provides two types of automated updates:
 |------------------------|-----------------|----------------|
 | **Purpose**           | Fix vulnerabilities | Keep dependencies up-to-date |
 | **Trigger**           | GitHub security alerts | Scheduled checks (daily, weekly, etc.) |
-| **Impact**           | Fixes critical issues but might introduce breaking changes | Helps avoid outdated libraries and technical debt |
-| **Configuration** | Enabled by default in GitHub repositories | Requires `.github/dependabot.yml` |
+| **Impact**           | Fixes critical issues but might introduce breaking changes | Helps avoid outdated libraries and technical debt might also break things |
+| **Configuration** | Enabled via the repo settings | Also Enabled via the repo settings but requires `.github/dependabot.yml` |
 
 For more details:  
 - [Security Updates](https://docs.github.com/en/code-security/dependabot/dependabot-security-updates)  
