@@ -93,7 +93,44 @@ Example snippet from `.github/dependabot.yml`:
 ```yaml
 version: 2
 updates:
+  # Enable version updates for npm
   - package-ecosystem: "npm"
-    directory: "/" 
+    # Look for `package.json` and `package-lock.json` in the root directory
+    directory: "/"
+    # Check the npm registry for updates every day (weekdays)
     schedule:
-      interval: "weekly"
+      interval: "daily"
+      time: "08:00"
+      timezone: "UTC"
+    # Set a limit on how many open pull requests Dependabot can create at a time
+    open-pull-requests-limit: 5
+    # Allow only patch and minor updates (prevent automatic major version updates)
+    versioning-strategy: "increase-if-necessary"
+    # Define reviewers for Dependabot PRs
+    reviewers:
+      - "your-github-username"
+    # Add labels to Dependabot pull requests
+    labels:
+      - "dependencies"
+      - "dependabot"
+    # Specify dependencies to ignore
+    ignore:
+      - dependency-name: "axios"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "react"
+        update-types: ["version-update:semver-major", "version-update:semver-minor"]
+      - dependency-name: "express"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "lodash"
+        update-types: ["version-update:semver-major", "version-update:semver-minor"]
+      - dependency-name: "mongoose"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "jest"
+        update-types: ["version-update:semver-major"]
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major", "version-update:semver-minor"]
+    # Allow auto-merge for minor and patch updates
+    commit-message:
+      prefix: "chore(deps)"
+      include: "scope"
+
