@@ -1,6 +1,7 @@
-# Dependabot-Demo
+# Dependabot-Demo https://shorturl.at/OVUD2
 
 This repository is designed to help students understand GitHub Dependabot and how to manage automated dependency updates.
+
 
 ---
 
