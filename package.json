@@ -19,7 +19,7 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "express": "4.17.1",
+    "express": "4.20.0",
     "lodash": "4.17.15",
     "minimist": "1.2.5",
     "moment": "2.24.0",
